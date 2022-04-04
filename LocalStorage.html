@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>utilisation du local storage</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<html>
+
+<head>
+    <script>// script pour incrémenter le conteur
+        function nbclic() {//appelle de la fonction
+            if (typeof (Storage) !== "undefined") {
+                if (localStorage.click) {
+                    localStorage.click = Number(localStorage.click) + 1;// on rajoute 1 au conteur
+                } else {
+                    localStorage.click = 1;
+                }
+                document.getElementById("resultat").innerHTML = "Vous avez appuyé " + localStorage.click + " fois sur le boutton !";//message avec le nombre de clic afficher grace à localStorage.click
+            } else {
+                document.getElementById("resultat").innerHTML = "erreur de navigateur dans le stockage web !";//message pour avertir d'une erreur...
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <p><button onclick="nbclic()" type="button">appuyez ici !</button></p><!--de type boutton car il est associer à un script-->
+    <div id="resultat"></div><!--affiche la phrase du script selon les circonstances-->
+    <p>quand vous appuyez sur le boutton le conteur s'incrémente de 1 .</p>
+    <p>Le navigateur Web garde en mémoire le nombre de fois qu'on a cliqué sur le boutton même si l'on ferme l'onglet ou le navigateur . Cela est possible grace au local storage / ou Web storage .</p>
+
+</body>
+
+</html>
